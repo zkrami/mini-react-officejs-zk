@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1" 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0" 
+    xmlns:ov="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="TaskPaneApp">
+
+    <Id>c5bdb196-f263-42e8-a4cf-76040bcccf60</Id>
+    <Version>1.0.1.0</Version>
+    <ProviderName>ProviderName</ProviderName>
+    <DefaultLocale>en-US</DefaultLocale>
+    <DisplayName DefaultValue="DisplayName" />
+    <Description DefaultValue="Description"/>
+    <IconUrl DefaultValue="https://localhost:8000/images/AIChatLogo3232.png"/>
+    <HighResolutionIconUrl DefaultValue="https://localhost:8000/images/AIChatLogo6464.png" />
+    <SupportUrl DefaultValue="https://www.google.com" />
+
+    <AppDomains>
+        <AppDomain>https://excel.officeapps.live.com</AppDomain>
+        <AppDomain>https://www.google.com</AppDomain>
+        <AppDomain>https://localhost:8000</AppDomain>
+        <AppDomain>https://localhost:3000</AppDomain>
+    </AppDomains>
+
+    <Hosts>
+        <Host Name="Workbook" />
+    </Hosts>
+
+    <Requirements>
+        <Sets>
+            <Set Name="ExcelApi" MinVersion="1.2"/>
+            <Set Name="SharedRuntime" MinVersion="1.1"/>
+            <Set Name="KeyboardShortcuts" MinVersion="1.1"/>
+        </Sets>
+    </Requirements>
+
+    <DefaultSettings>
+        <SourceLocation DefaultValue="https://localhost:8000/#/data-generation" />
+    </DefaultSettings>
+
+    <Permissions>ReadWriteDocument</Permissions>
+
+    <VersionOverrides xmlns="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="VersionOverridesV1_0">
+        <Hosts>
+            <Host xsi:type="Workbook">
+                <DesktopFormFactor>
+                    <GetStarted>
+                        <Title resid="Addin.GetStarted.Title"/>
+                        <Description resid="Addin.GetStarted.Description"/>
+                        <LearnMoreUrl resid="Addin.GetStarted.LearnMoreUrl"/>
+                    </GetStarted>
+
+                    <FunctionFile resid="Addin.FunctionFile.Url" />
+
+                    <ExtensionPoint xsi:type="PrimaryCommandSurface">
+                        <CustomTab id="Addin.Tab">
+                            <Label resid="Addin.Tab.Label" />
+
+                            <Group id="Addin.Group.Main">
+                                <Label resid="Addin.Group.Main.Label" />
+                                <Icon>
+                                    <bt:Image size="16" resid="Addin.Icon.Main.16" />
+                                    <bt:Image size="32" resid="Addin.Icon.Main.32" />
+                                    <bt:Image size="80" resid="Addin.Icon.Main.80" />
+                                </Icon>
+                                <Control xsi:type="Button" id="Addin.Button.Main">
+                                    <Label resid="Addin.Button.Main.Label" />
+                                    <Supertip>
+                                        <Title resid="Addin.Button.Main.Label" />
+                                        <Description resid="Addin.Button.Main.Tooltip" />
+                                    </Supertip>
+                                    <Icon>  
+                                        <bt:Image size="16" resid="Addin.Icon.Main.16" />
+                                        <bt:Image size="32" resid="Addin.Icon.Main.32" />
+                                        <bt:Image size="80" resid="Addin.Icon.Main.80" />
+                                    </Icon>
+                                    <Action xsi:type="ShowTaskpane">
+                                        <TaskpaneId>Office.AutoShowTaskpaneWithDocument</TaskpaneId>
+                                        <SourceLocation resid="Addin.Taskpane.Url" />
+                                    </Action>
+                                </Control>
+                            </Group>
+
+                            <Group id="Addin.Group.Help">
+                                <Label resid="Addin.Group.Help.Label" />
+                                <Icon>
+                                    <bt:Image size="16" resid="Addin.Icon.Help.16" />
+                                    <bt:Image size="32" resid="Addin.Icon.Help.32" />
+                                    <bt:Image size="80" resid="Addin.Icon.Help.80" />
+                                </Icon>
+                                <Control xsi:type="Button" id="Addin.Button.Help">
+                                    <Label resid="Addin.Button.Help.Label" />
+                                    <Supertip>
+                                        <Title resid="Addin.Button.Help.Label" />
+                                        <Description resid="Addin.Button.Help.Tooltip" />
+                                    </Supertip>
+                                    <Icon>
+                                        <bt:Image size="16" resid="Addin.Icon.Help.16" />
+                                        <bt:Image size="32" resid="Addin.Icon.Help.32" />
+                                        <bt:Image size="80" resid="Addin.Icon.Help.80" />
+                                    </Icon>
+                                    <Action xsi:type="ExecuteFunction">
+                                        <FunctionName>openHelpDesk</FunctionName>
+                                    </Action>
+                                </Control>
+                            </Group>
+                        </CustomTab>
+                    </ExtensionPoint>
+                </DesktopFormFactor>
+            </Host>
+        </Hosts>
+
+        <Resources>
+            <bt:Images>
+                <bt:Image id="Addin.Icon.Main.16" DefaultValue="https://localhost:8000/images/AgentLogo1616.png" />
+                <bt:Image id="Addin.Icon.Main.32" DefaultValue="https://localhost:8000/images/AgentLogo3232.png" />
+                <bt:Image id="Addin.Icon.Main.80" DefaultValue="https://localhost:8000/images/AgentLogo8080.png" />
+
+                <bt:Image id="Addin.Icon.Help.16" DefaultValue="https://localhost:8000/images/helpdeskLogo1616.png" />
+                <bt:Image id="Addin.Icon.Help.32" DefaultValue="https://localhost:8000/images/helpdeskLogo3232.png" />
+                <bt:Image id="Addin.Icon.Help.80" DefaultValue="https://localhost:8000/images/helpdeskLogo8080.png" />
+            </bt:Images>
+
+            <bt:Urls>
+                <bt:Url id="Addin.FunctionFile.Url" DefaultValue="https://localhost:8000/functions.html" />
+                <bt:Url id="Addin.Taskpane.Url" DefaultValue="https://localhost:8000/#/data-generation" />
+                <bt:Url id="Addin.GetStarted.LearnMoreUrl" DefaultValue="https://www.google.com" />
+            </bt:Urls>
+
+            <bt:ShortStrings>
+                <bt:String id="Addin.Tab.Label" DefaultValue="Tab Label" />
+                <bt:String id="Addin.GetStarted.Title" DefaultValue="GetStarted Title" />
+                <bt:String id="Addin.Group.Main.Label" DefaultValue="Group Main Label" />
+                <bt:String id="Addin.Button.Main.Label" DefaultValue="Button Main Label" />
+                <bt:String id="Addin.Group.Help.Label" DefaultValue="Group Help Label" />
+                <bt:String id="Addin.Button.Help.Label" DefaultValue="Button Help Label" />
+            </bt:ShortStrings>
+
+            <bt:LongStrings>
+                <bt:String id="Addin.GetStarted.Description" DefaultValue="GetStarted Description" />
+                <bt:String id="Addin.Button.Main.Tooltip" DefaultValue="Button Main Tooltip" />
+                <bt:String id="Addin.Button.Help.Tooltip" DefaultValue="Button Help Tooltip" />
+            </bt:LongStrings>
+        </Resources>
+
+        <Runtimes>
+            <Runtime resid="Addin.FunctionFile.Url" lifetime="long" />
+        </Runtimes>
+    </VersionOverrides>
+
+    <ExtendedOverrides Url="https://localhost:8000/lib/shortcuts-ai.json" />
+
+</OfficeApp>

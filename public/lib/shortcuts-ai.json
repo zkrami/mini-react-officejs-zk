@@ -1,0 +1,49 @@
+{
+  "actions": [
+    {
+      "id": "ShowTaskpane",
+      "type": "ExecuteFunction",
+      "name": "Show task pane"
+    },
+    {
+      "id": "HideTaskpane",
+      "type": "ExecuteFunction",
+      "name": "Hide task pane"
+    },
+    {
+        "id": "RunAction",
+        "type": "ExecuteFunction",
+        "name": "Run an action specific to the Office host"
+    }
+  ],
+  "shortcuts": [
+    {
+      "action": "ShowTaskpane",
+      "key": {
+        "default": "Ctrl+Alt+Shift+J"
+      }
+    },
+    {
+      "action": "HideTaskpane",
+      "key": {
+        "default": "Ctrl+Alt+D",
+        "mac": "Command+Option+D",
+        "web": "Ctrl+Alt+D",
+        "windows": "Ctrl+Alt+D"
+      }
+    },
+    {
+        "action": "RunAction",
+        "key": {
+            "default": "Ctrl+Alt+Q"
+        }
+    }
+  ],
+  "resources": {
+    "default": {
+      "ShowTaskpane_action_name": { "value": "Show task pane" },
+      "HideTaskpane_action_name": { "value": "Hide task pane" },
+      "RunAction_action_name": { "value": "Run an action specific to the Office host" }
+    }
+  }
+}

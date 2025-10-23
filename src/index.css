@@ -1,0 +1,23 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /* min-width: 300px; */ /* Your desired minimum width */
+  /* direction: rtl; */ /* Right-to-Left direction to make content stick to the right */
+  /* overflow-x: hidden; */ /* Hide horizontal overflow */
+}
+
+.addin-component {
+  direction: ltr
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.header .ms-Button-flexContainer{
+}
