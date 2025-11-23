@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1" 
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-    xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0" 
+<OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0"
     xmlns:ov="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="TaskPaneApp">
 
-    <Id>c5bdb196-f263-42e8-a4cf-76040bcccf60</Id>
+    <Id>c5bdb196-f263-42e8-a4cf-76071bcccf60</Id>
     <Version>1.0.1.0</Version>
     <ProviderName>ProviderName</ProviderName>
     <DefaultLocale>en-US</DefaultLocale>
@@ -34,7 +34,7 @@
     </Requirements>
 
     <DefaultSettings>
-        <SourceLocation DefaultValue="https://localhost:8000/#/data-generation" />
+        <SourceLocation DefaultValue="https://localhost:8000/functions.html" />
     </DefaultSettings>
 
     <Permissions>ReadWriteDocument</Permissions>
@@ -42,6 +42,9 @@
     <VersionOverrides xmlns="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="VersionOverridesV1_0">
         <Hosts>
             <Host xsi:type="Workbook">
+                <Runtimes>
+                    <Runtime resid="Addin.FunctionFile.Url" lifetime="long" />
+                </Runtimes>
                 <DesktopFormFactor>
                     <GetStarted>
                         <Title resid="Addin.GetStarted.Title"/>
@@ -68,7 +71,7 @@
                                         <Title resid="Addin.Button.Main.Label" />
                                         <Description resid="Addin.Button.Main.Tooltip" />
                                     </Supertip>
-                                    <Icon>  
+                                    <Icon>
                                         <bt:Image size="16" resid="Addin.Icon.Main.16" />
                                         <bt:Image size="32" resid="Addin.Icon.Main.32" />
                                         <bt:Image size="80" resid="Addin.Icon.Main.80" />
@@ -142,9 +145,7 @@
             </bt:LongStrings>
         </Resources>
 
-        <Runtimes>
-            <Runtime resid="Addin.FunctionFile.Url" lifetime="long" />
-        </Runtimes>
+
     </VersionOverrides>
 
     <ExtendedOverrides Url="https://localhost:8000/lib/shortcuts-ai.json" />

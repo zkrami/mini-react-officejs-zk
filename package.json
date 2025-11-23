@@ -74,7 +74,7 @@
     "yup": "^0.28.3"
   },
   "scripts": {
-    "start": "PORT=3000 react-app-rewired start",
+    "start": "PORT=8000 react-app-rewired start",
     "start:https": "HTTPS=true react-app-rewired start",
     "build": "GENERATE_SOURCEMAP=false react-scripts --max_old_space_size=4096 build && (git diff-index --quiet HEAD && echo \"{ \\\"commit\\\": \\\"$(git rev-parse HEAD)\\\", \\\"message\\\": \\\"$(git log -1 --pretty=%s)\\\", \\\"date\\\": \\\"$(git log -1 --format=%cd --date=format:'%Y-%m-%dT%H:%M:%SZ')\\\" }\" > build/metadata.json || echo '{ \"error\": \"There are uncommitted changes\" }' > build/metadata.json)",
     "test": "react-scripts test",

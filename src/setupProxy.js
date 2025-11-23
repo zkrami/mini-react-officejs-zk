@@ -4,7 +4,7 @@ module.exports = function (app) {
     // Add CORS/PNA headers for the resources Office (Excel Online) fetches
     // Extend this list if you want to expose other paths (e.g., /functions.html)
     const needsCors =
-      req.path === "/lib/shortcuts.json" ||
+      req.path === "/lib/shortcuts-ai.json" || // NOTE(rami): missing -ai, after fixing, I still see 404 errors for that file
       req.path === "/functions.html" ||
       req.path.startsWith("/lib/");
 
